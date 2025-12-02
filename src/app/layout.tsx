@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat_Alternates } from "next/font/google";
 import "./globals.css";
+import DesktopOnly from "@/components/DesktopOnly";
 
 const montserratAlternates = Montserrat_Alternates({
   variable: "--font-montserrat",
@@ -21,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserratAlternates.variable} antialiased`}>
-        {children}
+        <DesktopOnly>{children}</DesktopOnly>
       </body>
     </html>
   );
